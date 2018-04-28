@@ -1,0 +1,35 @@
+<div class="row col-lg-12">
+  <h1 class="page-heading">Todas las Categorías</h1>
+</div>
+
+
+<div class="row col-lg-12">
+  <div class="panel-body">
+   <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover" id="dataTables-categorias">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Nombre</td>
+          <td>Rut</td>
+          <td>Acciones</td>
+        </tr>
+      </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.id %></td>
+            <td><%= category.name %></td>
+            <td><%= category.description %></td>
+            <td>
+                 <%= link_to edit_category_path(category) do %>
+                  <i class="fa fa-pencil" aria-hidden="true"></i> Editar
+                <% end %>
+              </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

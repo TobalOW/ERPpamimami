@@ -1,0 +1,13 @@
+<%= simple_form_for @order do |f| %>
+  <%= f.association :buyer, label: 'Comprador' %>
+  <%= f.input :address, label: 'Dirección' %>
+  <%= f.input :total, label: 'Total' %>
+  <%= f.simple_fields_for :order_details do |orderdetail| %>
+
+    <%= render 'order_detail_fields', f:  orderdetail %>
+
+  <% end %>
+  <%= link_to_add_association 'add order', f, :order_details %>
+
+  <%= f.button :submit, value: 'Enviar', class: 'btn-success' %>
+<% end %>

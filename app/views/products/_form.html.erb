@@ -1,0 +1,6 @@
+<%= simple_form_for [@product] do |f| %>
+  <%= f.association :category, label: 'Categoría' %>
+  <%= f.input :name, label: 'Nombre' %>
+  <%= f.input :price, label: 'Precio' %>
+  <%= f.button :submit, value: 'Enviar', class: 'btn-success' %>
+<% end %>

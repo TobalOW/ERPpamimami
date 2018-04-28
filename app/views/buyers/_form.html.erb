@@ -1,0 +1,5 @@
+<%= simple_form_for [@buyer] do |f| %>
+  <%= f.input :name, label: 'Nombre' %>
+  <%= f.input :rut, label: 'Rut' %>
+  <%= f.button :submit, value: 'Enviar', class: 'btn-success' %>
+<% end %>
