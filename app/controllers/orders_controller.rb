@@ -16,7 +16,6 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
-    @order.order_details.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @order }
@@ -76,8 +75,7 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(
-        :buyer_id, :user_id, :total, :address,
-        { order_details_attributes: [:product_id, :quantity, :total, :price, :_destroy] }
+        :buyer_id, :user_id, :total, :address, order_details_attributes: [:product_id, :quantity, :total, :price, :_destroy]
       )
     end
 end
