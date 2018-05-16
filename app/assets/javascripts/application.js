@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require cocoon
 //= require datatables
 //= require flot
 //= require holderjs
@@ -21,5 +22,4 @@
 //= require metisMenu
 //= require startbootstrap-sb-admin-2
 //= require Chart.min
-//= require cocoon
 //= require_tree .
