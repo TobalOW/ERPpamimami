@@ -3,6 +3,7 @@
 # Table name: deposits
 #
 #  id         :integer          not null, primary key
+#  comment    :text
 #  method     :string
 #  total      :integer
 #  created_at :datetime         not null
@@ -16,5 +17,5 @@
 
 class Deposit < ApplicationRecord
   belongs_to :order
-  validates :method, :total, :order_id, presence: true
+  validates :method, :total, :order_id, :comment, presence: true
 end
