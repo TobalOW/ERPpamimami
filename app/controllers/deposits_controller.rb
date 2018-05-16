@@ -4,7 +4,7 @@ class DepositsController < ApplicationController
   # GET /deposits
   # GET /deposits.json
   def index
-    @deposits = Deposit.all
+    @deposits = current_user.user_payments
   end
 
   # GET /deposits/1
@@ -14,7 +14,7 @@ class DepositsController < ApplicationController
 
   # GET /deposits/new
   def new
-    @deposit = Deposit.new
+    @deposit = Deposit.new(order_id: params[:order_id])
   end
 
   # GET /deposits/1/edit
@@ -28,7 +28,7 @@ class DepositsController < ApplicationController
 
     respond_to do |format|
       if @deposit.save
-        format.html { redirect_to @deposit, notice: 'Deposit was successfully created.' }
+        format.html { redirect_to deposits_path, notice: 'Deposit was successfully created.' }
         format.json { render :show, status: :created, location: @deposit }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class DepositsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deposit_params
-      params.require(:deposit).permit(:order_id, :total, :method)
+      params.require(:deposit).permit(:order_id, :total, :method, :comment)
     end
 end
