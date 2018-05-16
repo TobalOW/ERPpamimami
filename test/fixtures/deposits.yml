@@ -3,6 +3,7 @@
 # Table name: deposits
 #
 #  id         :integer          not null, primary key
+#  comment    :text
 #  method     :string
 #  total      :integer
 #  created_at :datetime         not null

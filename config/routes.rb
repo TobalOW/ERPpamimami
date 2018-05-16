@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   resources :deposits
   resources :order_details
-  resources :orders
+  resources :orders do
+    member do
+      get :history
+      get :payment
+    end
+  end
   resources :buyers
   resources :products
   resources :categories
