@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db_victoriarp
-  username: victoriarp
-  password: <%= ENV['TIZTIC_DATABASE_PASSWORD'] %>
+  database: victoriaureta_production
+  username: victoriaureta
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
