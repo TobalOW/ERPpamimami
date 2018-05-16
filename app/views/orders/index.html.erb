@@ -28,9 +28,13 @@
             <td><%= order.total %></td>
             <td><%= order.order_details.count %></td>
             <td>
-                 <%= link_to order do %>
+                 <%= link_to history_order_path(order) do %>
                   <i class="fa fa-pencil" aria-hidden="true"></i> Ver
                 <% end %>
+                 <%= link_to payment_order_path(order) do %>
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> Abonos
+                <% end %>
+
               </td>
           </tr>
           <% end %>
