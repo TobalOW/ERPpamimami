@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: db_victoriarp
+  username: victoriarp
+  password: <%= ENV['TIZTIC_DATABASE_PASSWORD'] %>
