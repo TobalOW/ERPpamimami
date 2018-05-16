@@ -17,11 +17,12 @@
 #
 
 class Order < ApplicationRecord
-  has_many :order_details, inverse_of: :order
+  has_many :order_details
+  has_many :deposits
   belongs_to :buyer
   belongs_to :user
   validates :address, :total, :buyer_id, :user_id, presence: true
-  
+
   accepts_nested_attributes_for :order_details, :reject_if => :all_blank, :allow_destroy => true
 
 end
