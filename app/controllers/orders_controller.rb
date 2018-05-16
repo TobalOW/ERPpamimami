@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :history, :payment]
 
   # GET /orders
   # GET /orders.json
@@ -16,6 +16,10 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order.order_details.build
+    @order.order_details.build
+    @order.order_details.build
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @order }
@@ -30,7 +34,6 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params.merge(user_id: current_user.id))
-
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -64,6 +67,13 @@ class OrdersController < ApplicationController
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def history
+    @histories = @order.order_details
+  end
+  def payment
+    @payments = @order.deposits
   end
 
   private
