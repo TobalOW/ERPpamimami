@@ -42,7 +42,7 @@ gem 'devise'
 # Form
 gem 'simple_form'
 
-gem "cocoon"
+gem 'cocoon', '~> 1.2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -70,3 +70,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Bootstrap sb admin 2
 gem 'rails-assets-startbootstrap-sb-admin-2', source: 'https://rails-assets.org'
+
+gem 'groupdate'
