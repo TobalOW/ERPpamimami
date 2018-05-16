@@ -1,6 +1,6 @@
 <div class="row">
      <div class="col-lg-12">
-         <h1 class="page-header">Estadística de los proveedores</h1>
+         <h1 class="page-header">Estadística de <%= @user.email %></h1>
      </div>
      <!-- /.col-lg-12 -->
  </div>
@@ -11,11 +11,12 @@
      <div class="col-lg-12">
          <div class="panel panel-default">
              <div class="panel-heading">
-                 Ventas mes actual de todos los proveedores
+                 Todos los abonos
              </div>
              <!-- /.panel-heading -->
              <div class="panel-body">
                  <div class="flot-chart">
+                  <%= line_chart @data,@options %>
                  </div>
              </div>
              <!-- /.panel-body -->
@@ -27,12 +28,12 @@
      <div class="col-lg-12">
          <div class="panel panel-default">
              <div class="panel-heading">
-                 Ventas de todos los productos
+                 Todas las ventas
              </div>
              <!-- /.panel-heading -->
              <div class="panel-body">
                  <div class="flot-chart">
-
+                  <%= line_chart @data1,@options2 %>
                  </div>
              </div>
              <!-- /.panel-body -->
