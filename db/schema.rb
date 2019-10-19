@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 20190504145211) do
   end
 
   create_table "deposits", force: :cascade do |t|
-    t.integer "order_id"
+    t.bigint "buyer_id"
     t.integer "total"
     t.string "method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "comment"
-    t.index ["order_id"], name: "index_deposits_on_order_id"
+    t.index ["buyer_id"], name: "index_deposits_on_buyer_id"
   end
 
   create_table "order_details", force: :cascade do |t|
@@ -91,4 +91,5 @@ ActiveRecord::Schema.define(version: 20190504145211) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "deposits", "buyers"
 end

@@ -32,5 +32,5 @@ class User < ApplicationRecord
   has_many :products
 
   has_many :user_order_details, through: :orders, source: 'order_details'
-  has_many :user_payments, through: :orders, source: 'deposits'
+  has_many :user_payments, through: :buyers, source: 'deposits'
 end

@@ -8,11 +8,15 @@
 #  total      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  order_id   :integer
+#  buyer_id   :bigint(8)
 #
 # Indexes
 #
-#  index_deposits_on_order_id  (order_id)
+#  index_deposits_on_buyer_id  (buyer_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (buyer_id => buyers.id)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
